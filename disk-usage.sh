@@ -1,5 +1,5 @@
 #!/bin/bash
-limit=10 #90 for %90
+limit=90 #90 for %90
 disk=$(df -h / | tail -1 | awk '{ print $5//%/}')
 echo "/ Partition disk dolulugu $disk"
 if  [ "$disk" -gt "$limit" ]
