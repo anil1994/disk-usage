@@ -1,10 +1,10 @@
 #!/bin/bash
-limit=90 #90 for %90
+limit=10 #90 for %90
 disk=$(df -h / | tail -1 | awk '{ print $5//%/}')
-echo "/ Partition disk doluluğu $disk"
+echo "/ Partition disk dolulugu $disk"
 if  [ "$disk" -gt "$limit" ]
 then
-    echo "## / alanı % $disk doluluk oranına ulaşmıştır" > /tmp/Diskfull.log
-    mail -s "Disk alanı % $disk oranına ulaştı" adalkilic@ku.edu.tr < /tmp/Diskfull.log
+    /usr/bin/echo "## / alanı % $disk doluluk oranına ulasmistir" > /tmp/Diskfull.log
+    /usr/bin/mail -s "Disk alanı % $disk oranına ulasmistir" adalkilic@ku.edu.tr < /tmp/Diskfull.log
 fi
 exit
